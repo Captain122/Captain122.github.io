@@ -1,0 +1,26 @@
+.container .row{
+	margin-top:50px;
+	}
+h1 {
+	margin-bottom:66px;
+	margin-left:470px;
+	color:violet;
+}
+a.spoiler:after {
+	 "[rr]";
+}
+a.spoiler.collapsed:before{
+	content: " [+]";
+}
+ #footer{
+	 text-align:center;
+	 background-color:violet;
+	 color:black;
+	 clear:both;
+	 height: 30px;
+     margin-top:-50px;
+}
+h2 {
+	color:black;
+	text-align:center;
+}

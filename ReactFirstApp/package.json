@@ -1,0 +1,11 @@
+{
+    "name":"react-lesson",
+    "version": "1.0.0",
+    "description": "React RU lesson",
+    "main": "index.html",
+    "scripts": {
+        "node server.js"
+        },
+    "author":"Captain122",
+    "license": "MIT"
+}

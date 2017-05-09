@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    background-color: white;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 0px;
+}
+h1, h2, h3 ,h4,  h6 {
+  font-weight: 300;
+  color: #333;
+}
+p{  
+    line-height: 26px;
+    margin-bottom:25px;
+}
+.centered {
+    text-align: center;
+}
+ a{
+     color:red;
+ }
+ a:hover, a:focus {
+     color: violet;
+     text-decoration: none;
+     outline: 0;
+ }
+ #headerwrap {
+     background: url(../img/2.jpg) no-repeat center top;
+     margin-top: -15px;
+     padding-top: 10px;
+     text-align: center;
+     background-attachment: relative;
+     background-position :center center;
+     min-height: 750px;
+     width:100%;
+
+       background-size: cover;
+
+     -webkit-background-size: cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size: cover;
+ }
+ 
+ @media screen and (min-width: 960px) {
+ #headerwrap h2  {
+      column-count: 1;
+      margin-top: 100px;
+      margin-left:-700px ;
+      color: mediumseagreen;
+      font-size:50px;
+      font-weight: 200;
+      letter-spacing: 3px;
+  }
+  #headerwrap h1 {
+      column-count: 1;
+      margin-top: 10px;
+      margin-left: -700px;
+      color: mediumseagreen;
+      font-size:70px;
+      font-weight: 200;
+      letter-spacing: 3px;
+  }
+  #headerwrap p{
+
+      color: black;
+      column-count: 1;
+      margin-top: 10px;
+      margin-left: -620px;
+      font-size:30px;
+      font-weight: 150;
+      letter-spacing: 2px;
+  }
+  #headerwrap img{
+        margin-top: 60px;
+        margin-left: -700px;
+  }
+  #headerwrap button{
+        
+        margin-left: -700px;
+  }
+  #headerwrap .dig{
+      
+       width: 360px;
+       height: 170px;
+       margin-top: -250px;
+       margin-left: 220px;
+       padding: 10px;
+       background:white;
+       border-radius: 10px;
+       opacity: 0.6;
+  }
+  #headerwrap .dig  > p{
+    display: inline-block;
+    font-size: 33px;
+    font-weight: bold;
+    color:green;
+    margin-left: -280px;
+    margin:0px;
+    padding: 5px 0 0 13px;
+    
+  } 
+ 
+ }
+ .w {
+    padding-top: 30px;
+ }
+ .w h4{
+     font-size: 24px;
+ }
+ .e{
+     text-align: center;
+     background-color: gray;
+ }
+ .e p{
+     font-size: 29px;
+     color:black;
+ }
+ .leftimage{    
+    float:left; 
+    padding: auto;
+ }
+ .f{ 
+     
+     padding-right: 80px;
+     background-position: center center;
+ }

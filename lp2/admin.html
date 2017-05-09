@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nest Admin</title>
+    <link rel="icon" type="image/png" href="system/nestIco.png">
+    <link href="system/bulma.css" rel="stylesheet" type="text/css">
+    <link href="system/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="system/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link href="system/animate.css" rel="stylesheet" type="text/css">
+    <link href="system/todos.css" rel="stylesheet" type="text/css">
+    <script src="system/js/jquery.js"></script>
+    <script src="system/js/jquery-migrate.js"></script>
+    <script src="system/jquery-ui-1.11.4/jquery-ui.js"></script>
+    <script src="system/js/orna.js"></script>
+    <script src="system/js/handlebars.js"></script>
+    <script src="system/js/aes.js"></script>
+    <script src="system/js/pass.js"></script>
+    <script src="system/js/admin.js"></script>
+    <script src="system/editor/ckeditor.js"></script>
+</head>
+
+<body style="padding:20px; min-width:580px;">
+    <div id="mainNest"></div>
+</body>
+<script id="passTemplate" type="text/x-handlebars-template">
+      <br>
+    <br>
+    <br>
+    <div class="columns">
+        <div class="column"> </div>
+        <h1 class="subtitle is-2 textincenter animated swing">Nest</h1>
+        <div class="column"> </div>
+    </div>
+    <div class="columns">
+        <div class="column"> </div>
+        <p class="control">
+            <input class="input is-info" type="password" placeholder="Password" id="pass"> </p> <a class="button is-info is-active" onclick="checkPass()">Enter</a>
+        <div class="column"> </div>
+    </div>
+    <div class="columns">
+        <div class="column"> </div>
+        <div class="column"> <p class="control"> <a class="button is-info is-warning" onclick="hidePass()">HidePass</a> </p>
+        
+    <br><br>
+     <article class="message is-info">
+  <div class="message-header">
+    Info
+  </div>
+  <div class="message-body">
+ <a href="https://2ip.ru/" target="_blank" title="Узнай свой IP адрес"><img src="https://2ip.ru/sbar/2ip1.gif" alt="Узнай свой IP адрес"/></a>
+  </div>
+</article>
+ 
+     
+    
+      </div>
+       
+        <div class="column"> </div>
+    </div>
+    <br>
+    <p class="textincenter">ornaorg2016@gmail.com <br> 2016</p>
+</script>
+<script id="adminTemplate" type="text/x-handlebars-template">
+    <div id="dialog1" title="NEST" style="display:none">
+        <p>Add new Class with Text</p>
+    </div>
+    <div id="dialog2" title="NEST" style="display:none">
+        <p>Text Update!</p>
+    </div>
+    <div id="dialog3" title="NEST" style="display:none">
+        <p>Empty Field!</p>
+    </div>
+    <br><a class="button is-light" onclick="document.body.style.backgroundColor='#f5f7fa';">Light</a><a class="button is-dark" onclick="document.body.style.backgroundColor='#69707a';">Dark</a>
+    <div class="columns">
+        <div class="column"> </div>
+        <h1 class="title is-1 textincenter"><a href="https://nestpanel.github.io">Nest</a></h1>
+        <div class="column"> </div>
+    </div>
+    <div class="columns">
+        <div class="column"> </div>
+        <h2 class="subtitle is-2 textincenter" style="background-color:#f5f7fa; padding:4px;">Control panel</h2>
+        <div class="column"> </div>
+    </div>
+    <div class="columns">
+        <div class="column"> </div>
+        <div class="column"> </div>
+        <div class="column"> </div>
+        <form class="column">
+            <p class="control"> <span class="select">
+   <select id="classSelect">
+       
+       
+       
+   </select>
+    </span>
+           <a class="button is-danger" onclick="del()"> <span>Delete</span> <span class="icon">
+    <i class="fa fa-times"></i>
+  </span> </a>
+            </p>
+            <label class="label" style="background-color:#f5f7fa; padding:4px;">.class, tagname or #id</label>
+            <p class="control">
+                <input type="text" id="className" class="input" placeholder="Select element by class, name, id"> </p>
+            <label class="label" style="background-color:#f5f7fa; padding:4px;">Text
+                <br>(You can use HTML with OrnaJS classes)</label>
+            <p class="control">
+                <textarea id="classText" class="textarea"> </textarea>
+            </p>
+            <p class="control">
+                <a class="button is-success" onclick="save()"> <span class="icon">
+    <i class="fa fa-check"></i>
+  </span> <span>Save</span> </a>
+                <a class="button" href="https://github.com/nestpanel/nest"> <span class="icon">
+    <i class="fa fa-github"></i>
+  </span> <span>GitHub</span> </a>
+                <a class="button" href="http://ornaorg.github.io"> <span class="icon">
+    <i class="fa fa-code"></i>
+  </span> <span>OrnaJS</span> </a> <a class="button" href="tree.php"> <span class="icon">
+    <i class="fa fa-file"></i>
+  </span> <span>File Tree</span> </a>
+            </p>
+        </form>
+        <div class="column"> </div>
+        <div class="column"> </div>
+        <div class="column"> </div>
+    </div>
+    <div class="columns">
+        <div class="column"> </div>
+        <div class="column">
+            <div class="control is-grouped">
+                <p class="control is-expanded">
+                    <input type="text" id="demoLink" class="input" value="index.html" placeholder="Page name with extension"> </p>
+                <p class="control"> <a class="button is-primary" onclick="demo()">Refresh Demo</a> </p>
+            </div>
+        </div>
+        <div class="column"> </div>
+    </div>
+    <iframe id="pageDemo" src="index.html" width="100%" height="400" style="background-color:white; border:1px solid black;"> </iframe>
+    <div style="text-align:center">
+              <a class="button"  onclick="pageDemo.style.height='100px'">
+  <span class="icon">
+    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+  </span>
+<span>100px</span>
+</a>
+        <a class="button"  onclick="pageDemo.style.height='200px'">
+  <span class="icon">
+    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+  </span>
+<span>200px</span>
+</a>
+    <a class="button" onclick="pageDemo.style.height='400px'" >
+  <span class="icon">
+    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+  </span>
+<span>400px</span>
+</a>
+    <a class="button" onclick="pageDemo.style.height='600px'" >
+  <span class="icon">
+    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+  </span>
+<span>600px</span>
+</a>
+     <a class="button" onclick="pageDemo.style.height='800px'" >
+  <span class="icon">
+    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+  </span>
+<span>800px</span>
+</a>
+        <a class="button" onclick="pageDemo.style.height='1000px'" >
+  <span class="icon">
+    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+  </span>
+<span>1000px</span>
+</a>
+     </div>
+  <br><br>
+    <div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+
+</ul>
+<div class="jquery-script-ads">
+</div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<div id="todoapp">
+<header>
+<h1>To Do List</h1>
+<input id="new-todo" type="text" placeholder="What needs to be done?">
+</header>
+<section id='mainList'>
+<ul id='todo-list'>
+</ul>
+</section>
+<footer> <a id="clear-completed">Clear completed</a>
+<div id='todo-count'></div>
+</footer>
+
+    <a class="button" id="add">Save List</a>
+</div>
+
+    <br>
+    <div class="notification is-info"> Nest Admin - it's integrated panel for your site. Nest put text and html into your web page. Good for landing page.
+        <br> For setting Nest you only need to take web page and put into root folder, near "admin.html" after that add script "nest.js" to it. When script added it's all, then write text and write <i>.class, #id or name</i> of element in which you want add a text.
+        <br> Text fields support HTML and OrnaJS classes. </div><br>   <div style="text-align:center;">
+        
+        <button class="orna-btn inTime"></button>
+        
+    </div><br>
+     <p class="textincenter" style="background-color:#f5f7fa; padding:4px;">ornaorg2016@gmail.com <br> 2016</p>
+</script>
+<script>
+    function demo() {
+        var link = $('#demoLink').val();
+        if (link !== undefined) {
+            $('#pageDemo').attr('src', link);
+        }
+    }
+    
+</script>
+
+</html>

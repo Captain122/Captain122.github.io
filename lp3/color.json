@@ -1,0 +1,12 @@
+
+{
+  "mersedes":[
+    {"type":"c63" , "link":"https://ru.wikipedia.org/wiki/Mersedes" }
+  ],
+  "audi":[
+    {"type":"tt" , "link": "https://ru.wikipedia.org/wiki/Audi"}
+  ],
+  "bmw":[
+    {"type":"i8" , "link":"https://ru.wikipedia.org/wiki/BMW_i8"}
+  ]
+}
